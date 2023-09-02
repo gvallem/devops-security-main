@@ -14,5 +14,11 @@ pipeline {
             sh "git version"
           }
         }
+        stage('docker version') {
+          steps {
+            sh "docker -v"
+          }
+        }
+    
     }
 }
