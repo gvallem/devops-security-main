@@ -8,6 +8,11 @@ pipeline {
               sh "mvn -v"
               //archive 'target/*.jar' //so that they can be downloaded later
             }
-        }   
+        }
+        stage('git version') {
+          steps {
+            sh "git version"
+          }
+        }
     }
 }
