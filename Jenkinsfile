@@ -15,7 +15,7 @@ pipeline {
       }
       post {
         always {
-          junit 'target/surefire-reports/*.xml'
+          junit skipPublishingChecks: true, testResults: '**/cpputest_*.xml'
           jacoco execPattern: 'target/jacoco.exec'
         }
       }
