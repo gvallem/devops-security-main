@@ -17,6 +17,7 @@ pipeline {
         always {
           junit 'target/surefire-reports/*.xml'
           jacoco execPattern: 'target/jacoco.exec'
+          publishCoverage adapters: [jacocoAdapter('/target/surefire-reports/jacoco.xml')]
         }
       }
     }
