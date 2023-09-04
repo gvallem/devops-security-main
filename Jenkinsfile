@@ -20,7 +20,7 @@ pipeline {
         }
       }
     }
-
+    //Docker Build and Push
     stage('Docker Build and Push') {
       steps {
         withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
@@ -30,7 +30,7 @@ pipeline {
         }
       }
     }
-
+    //Deploy Kubernetes
     stage('Kubernetes Deployment - DEV') {
       steps {
         withKubeConfig([credentialsId: 'kubeconfig']) {
